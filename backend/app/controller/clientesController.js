@@ -19,7 +19,7 @@ const cadastrarCliente = async (req, res) => {
 };
 
 const listarClientes = async (req, res) => {
-  const { campo, valor } = req.query; // Alterado de filtroCampo para campo e filtroValor para valor
+  const { campo, valor } = req.query;
 
   try {
     let query = 'SELECT * FROM clientes';
@@ -80,19 +80,15 @@ const encontrarClienteMaisProximo = (rota, clientes) => {
 
 
 const calcularDistanciaEuclidiana = (ponto1, ponto2) => {
-  // Verifica se ponto1 é a empresa
   if (ponto1.id === 0) {
-    // Ponto1 é a empresa, use a posição (0, 0)
     const deltaX = ponto2.coordenada_x;
     const deltaY = ponto2.coordenada_y;
     return Math.sqrt(deltaX ** 2 + deltaY ** 2);
   } else if (ponto2.id === 0) {
-    // Ponto2 é a empresa, use a posição (0, 0)
     const deltaX = ponto1.coordenada_x;
     const deltaY = ponto1.coordenada_y;
     return Math.sqrt(deltaX ** 2 + deltaY ** 2);
   } else {
-    // Ambos os pontos são clientes, calcule normalmente
     const deltaX = ponto2.coordenada_x - ponto1.coordenada_x;
     const deltaY = ponto2.coordenada_y - ponto1.coordenada_y;
     return Math.sqrt(deltaX ** 2 + deltaY ** 2);

@@ -47,7 +47,7 @@
   }
 
   .clientes .secContainer .clienteContainer {
-    gap: 1rem; /* Reduzindo o espaçamento entre as divs */
+    gap: 1rem;
   }
   .clientes .secContainer .clienteContainer .singleCliente {
     transition: 0.3s ease-in-out;
@@ -80,17 +80,17 @@
 
   .clientes .secContainer .clienteContainer .singleCliente .clienteTitle {
     color: var(--blackColor);
-    font-size: 14px; /* Reduzindo o tamanho do título */
+    font-size: 14px;
     padding-top: 10px;
   }
   .clientes .secContainer .clienteContainer .singleCliente .clienteData {
     color: var(--blackColor);
     opacity: 0.7;
-    font-size: 12px; /* Reduzindo o tamanho dos dados */
+    font-size: 12px;
   }
 
   .filterContainer {
-    margin-bottom: 10px; /* Ou ajuste conforme necessário */
+    margin-bottom: 10px;
   }
   
   #campoSelect {
@@ -98,7 +98,7 @@
     font-size: 16px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    margin-right: 10px; /* Ou ajuste conforme necessário */
+    margin-right: 10px;
   }
   
   #campoSelect option[disabled] {
@@ -107,8 +107,8 @@
   
   #campoSelect:focus {
     outline: none;
-    border-color: #5cb85c; /* Ou a cor desejada */
-    box-shadow: 0 0 5px rgba(92, 184, 92, 0.5); /* Efeito de destaque ao focar */
+    border-color: #5cb85c;
+    box-shadow: 0 0 5px rgba(92, 184, 92, 0.5);
   }
   
   .error-message {
@@ -118,14 +118,14 @@
 
   .deleteIcon {
     position: absolute;
-    bottom: 5px; /* Reduzindo a distância do ícone de exclusão */
-    right: 5px; /* Reduzindo a distância do ícone de exclusão */
+    bottom: 5px;
+    right: 5px;
     cursor: pointer;
   }
   
   .deleteIcon-svg {
-    width: 15px; /* Reduzindo o tamanho do ícone de exclusão */
-    height: 15px; /* Reduzindo o tamanho do ícone de exclusão */
+    width: 15px;
+    height: 15px;
     color: red;
   }
   
@@ -135,7 +135,7 @@
       margin-top: 1rem;
     }
     .clientes .secContainer .secHeading .secTitle {
-      font-size: 18px; /* Reduzindo o tamanho do título */
+      font-size: 18px;
     }
     .clientes .secContainer .secHeading .navBtns {
       gap: 0.5rem;
@@ -147,15 +147,15 @@
       grid-template-columns: repeat(2, 1fr);
     }
     .clientes .secContainer .clienteContainer .singleCliente .clienteTitle {
-      font-size: 16px; /* Reduzindo o tamanho do título */
+      font-size: 16px;
     }
     .clientes .secContainer .clienteContainer .singleCliente .clienteData {
-      font-size: 14px; /* Reduzindo o tamanho dos dados */
+      font-size: 14px;
     }
   }
   @media screen and (min-width: 940px) {
     .clientes .secContainer .secHeading .secTitle {
-      font-size: 22px; /* Reduzindo o tamanho do título */
+      font-size: 22px;
     }
     .clientes .secContainer .secHeading .navBtns {
       gap: 0.5rem;

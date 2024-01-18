@@ -4,23 +4,15 @@ import chamarAPI from "../../Services/chamarAPI";
 import {
   BsArrowRightShort,
   BsArrowLeftShort,
-  BsPencilSquare,
-  BsTrash,
 } from "react-icons/bs";
 import Swal from "sweetalert2";
 import Aos from "aos";
 import "aos/dist/aos.css";
-import Modal from "react-modal";
 
 const ListarClientes = () => {
   const [clientes, setClientes] = useState([]);
   const [selectedCampo, setSelectedCampo] = useState(null);
-  const [modalIsOpen, setModalIsOpen] = useState(false);
   const [error, setError] = useState("");
-
-  const openModal = () => {
-    setModalIsOpen(true);
-  };
 
   const requestAPI = async () => {
     const response = chamarAPI();
