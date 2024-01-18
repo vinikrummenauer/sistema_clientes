@@ -1,0 +1,56 @@
+:root {
+  --primaryColor: #6a956a;
+  --secondaryColor: #d9edda;
+  --textColor: #a3a3a3;
+  --greyColor: #f4f4f4;
+  --whiteColor: #f5f4fa;
+  --blackColor: #434344;
+}
+
+.criarCliente {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+  background-color: var(--whiteColor);
+}
+
+.criarCliente h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  text-align: center;
+  color: var(--primaryColor);
+}
+
+.criarCliente label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 16px;
+  color: var(--textColor);
+}
+
+.criarCliente input[type="text"],
+.criarCliente input[type="email"],
+.criarCliente input[type="tel"],
+.criarCliente button {
+  width: calc(100% - 20px);
+  box-sizing: border-box;
+  padding: 10px;
+  margin-bottom: 15px;
+  font-size: 16px;
+  border: 1px solid var(--textColor);
+  border-radius: 4px;
+}
+
+.criarCliente button {
+  background-color: var(--primaryColor);
+  color: var(--whiteColor);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.criarCliente button:hover {
+  background-color: var(--secondaryColor);
+}

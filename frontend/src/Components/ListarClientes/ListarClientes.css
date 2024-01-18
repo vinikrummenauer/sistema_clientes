@@ -1,0 +1,166 @@
+:root {
+  --primaryColor: #5cb85c;
+  --secondaryColor: #d9edda;
+  --textColor: #a3a3a3;
+  --greyColor: #f4f4f4;
+  --whiteColor: #f5f4fa;
+  --blackColor: #434344;
+}
+  
+  .clientes .secContainer .secHeading {
+    justify-content: space-between;
+    padding: 1rem 0;
+  }
+  .clientes .secContainer .secHeading .navBtns {
+    gap: 0.5rem;
+  }
+
+  .btn {
+    padding: 10px 15px;
+    margin-top: 20px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .btn:hover {
+    background-color: #45a049;
+  }
+  
+
+  .editIcon {
+    position: absolute;
+    bottom: 5px;
+    right: 25px;
+    cursor: pointer;
+  }
+
+  .clientes .secContainer .secHeading .navBtns .icon {
+    padding: 3px 5px;
+    background: var(--secondaryColor);
+    border-radius: 3px;
+    font-size: 30px;
+    cursor: pointer;
+  }
+
+  .clientes .secContainer .clienteContainer {
+    gap: 1rem; /* Reduzindo o espaçamento entre as divs */
+  }
+  .clientes .secContainer .clienteContainer .singleCliente {
+    transition: 0.3s ease-in-out;
+    text-align: left;
+    padding: 1rem;
+    border-radius: 10px;
+    border: 1px solid var(--primaryColor);
+    height: 150px;
+    width: 300px;
+  }
+  .clientes .secContainer .clienteContainer .singleCliente .clienteInfo {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 10px;
+  }
+  
+  .clientes .secContainer .clienteContainer .singleCliente .clienteInfo:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  .clientes .secContainer .clienteContainer .singleCliente .clienteTitle {
+    color: var(--blackColor);
+    font-size: 14px; /* Reduzindo o tamanho do título */
+    padding-top: 10px;
+  }
+  .clientes .secContainer .clienteContainer .singleCliente .clienteData {
+    color: var(--blackColor);
+    opacity: 0.7;
+    font-size: 12px; /* Reduzindo o tamanho dos dados */
+  }
+
+  .filterContainer {
+    margin-bottom: 10px; /* Ou ajuste conforme necessário */
+  }
+  
+  #campoSelect {
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px; /* Ou ajuste conforme necessário */
+  }
+  
+  #campoSelect option[disabled] {
+    color: #888;
+  }
+  
+  #campoSelect:focus {
+    outline: none;
+    border-color: #5cb85c; /* Ou a cor desejada */
+    box-shadow: 0 0 5px rgba(92, 184, 92, 0.5); /* Efeito de destaque ao focar */
+  }
+  
+  .error-message {
+    color: red;
+    margin-bottom: 10px;
+  }
+
+  .deleteIcon {
+    position: absolute;
+    bottom: 5px; /* Reduzindo a distância do ícone de exclusão */
+    right: 5px; /* Reduzindo a distância do ícone de exclusão */
+    cursor: pointer;
+  }
+  
+  .deleteIcon-svg {
+    width: 15px; /* Reduzindo o tamanho do ícone de exclusão */
+    height: 15px; /* Reduzindo o tamanho do ícone de exclusão */
+    color: red;
+  }
+  
+  
+  @media screen and (min-width: 520px) {
+    .clientes .secContainer .secHeading {
+      margin-top: 1rem;
+    }
+    .clientes .secContainer .secHeading .secTitle {
+      font-size: 18px; /* Reduzindo o tamanho do título */
+    }
+    .clientes .secContainer .secHeading .navBtns {
+      gap: 0.5rem;
+    }
+    .clientes .secContainer .secHeading .navBtns .icon {
+      font-size: 30px;
+    }
+    .clientes .secContainer .clienteContainer {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .clientes .secContainer .clienteContainer .singleCliente .clienteTitle {
+      font-size: 16px; /* Reduzindo o tamanho do título */
+    }
+    .clientes .secContainer .clienteContainer .singleCliente .clienteData {
+      font-size: 14px; /* Reduzindo o tamanho dos dados */
+    }
+  }
+  @media screen and (min-width: 940px) {
+    .clientes .secContainer .secHeading .secTitle {
+      font-size: 22px; /* Reduzindo o tamanho do título */
+    }
+    .clientes .secContainer .secHeading .navBtns {
+      gap: 0.5rem;
+    }
+    .clientes .secContainer .clienteContainer {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
