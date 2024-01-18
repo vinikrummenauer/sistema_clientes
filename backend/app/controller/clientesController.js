@@ -48,54 +48,76 @@ const calcularRotaOtimizada = async (req, res) => {
   }
 };
 
+// função para calcular a rota otimizada com base nas coordenadas dos clientes
 const calcularRota = (clientes) => {
+  // inicializa a rota com a "Empresa" no ponto (0,0)
   const rota = [{ id: 0, nome: 'Empresa', posicao: 0 }];
+  // cria uma cópia da lista de clientes para manipulação
   let clientesRestantes = [...clientes];
 
+  // loop enquanto ainda houver clientes a serem visitados
   while (clientesRestantes.length > 0) {
+    // encontra o cliente mais próximo em relação ao último ponto da rota
     const clienteMaisProximo = encontrarClienteMaisProximo(rota, clientesRestantes);
-    rota.push({ id: clienteMaisProximo.id, nome: clienteMaisProximo.nome, posicao: rota.length,  coordenadas: { X: clienteMaisProximo.coordenada_x, Y: clienteMaisProximo.coordenada_y } });
+
+    // adiciona o cliente mais próximo à rota
+    rota.push({
+      id: clienteMaisProximo.id,
+      nome: clienteMaisProximo.nome,
+      posicao: rota.length,
+      coordenadas: { X: clienteMaisProximo.coordenada_x, Y: clienteMaisProximo.coordenada_y }
+    });
+
+    // remove o cliente da lista de clientes restantes
     clientesRestantes = clientesRestantes.filter((c) => c.id !== clienteMaisProximo.id);
   }
 
+  // adiciona a "Empresa" novamente no final da rota
   rota.push({ id: 0, nome: 'Empresa', posicao: rota.length });
 
-  return rota;
+  return rota; // retorna a rota otimizada
 };
 
+// função para encontrar o cliente mais próximo em relação ao último ponto da rota
 const encontrarClienteMaisProximo = (rota, clientes) => {
   let clienteMaisProximo;
   let menorDistancia = Infinity;
 
+  // loop pelos clientes restantes
   for (const cliente of clientes) {
+    // calcula a distância euclidiana entre o último ponto da rota e o cliente atual
     const distanciaAtual = calcularDistanciaEuclidiana(rota[0], cliente);
+
+    // atualiza o cliente mais próximo se a distância atual for menor
     if (distanciaAtual < menorDistancia) {
       menorDistancia = distanciaAtual;
       clienteMaisProximo = cliente;
     }
   }
 
-  return clienteMaisProximo;
+  return clienteMaisProximo; // vai retornar o cliente mais próximo
 };
 
-
+// função para calcular a distância euclidiana entre dois pontos no plano bidimensional
 const calcularDistanciaEuclidiana = (ponto1, ponto2) => {
+  // verifica se o ponto1 é a "Empresa"
   if (ponto1.id === 0) {
+    // calcula a distância usando as coordenadas do ponto2
     const deltaX = ponto2.coordenada_x;
     const deltaY = ponto2.coordenada_y;
     return Math.sqrt(deltaX ** 2 + deltaY ** 2);
   } else if (ponto2.id === 0) {
+    // calcula a distância usando as coordenadas do ponto1
     const deltaX = ponto1.coordenada_x;
     const deltaY = ponto1.coordenada_y;
     return Math.sqrt(deltaX ** 2 + deltaY ** 2);
   } else {
+    // ambos são clientes, calcula a distância normalmente
     const deltaX = ponto2.coordenada_x - ponto1.coordenada_x;
     const deltaY = ponto2.coordenada_y - ponto1.coordenada_y;
     return Math.sqrt(deltaX ** 2 + deltaY ** 2);
   }
 };
-
-
 
 
 
